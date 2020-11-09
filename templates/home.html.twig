@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{# syntaxe pour les commentaires #}
+{% block title %}Beau titre{% endblock %}
+    {% block body %}
+    <h1>{{ title | upper }}</h1>
+    <p>c'est ma première page symfo</p>
+    {% if age >= 18 %}
+        <p>vous êtes un adulte</p>
+    {% else %}
+        <p>vous êtes un enfant</p>
+    {% endif %}
+    <ul>
+    {% for compteur in 0..10 %}
+    <li>{{compteur}}</li>
+    {% endfor %}
+    </ul>
+    <a href="{{ path('hello_base')}}">Allez voir Hello</a>
+    {% for prenom, age in tableau %}
+    <p>(itération numéro {{loop.index0}} : {{prenom}} a {{age}} ans </p>
+    {% endfor %}
+{% endblock %}
