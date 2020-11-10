@@ -42,8 +42,13 @@ class AdController extends AbstractController
             //$manager = $this->getDoctrine()->getManager(); remplacée par l'injection entitymanager
             $entityManager->persist($ad);
             $entityManager->flush();
+
+            return $this->redirectToRoute('ads_show', [
+                'slug' => $ad->getSlug()
+            ]);
         }
 
+        //gestion de la redirection après soumission du formulaire
         return $this->render('ad/new.html.twig', [
             'form' => $form->createView()
         ]);
