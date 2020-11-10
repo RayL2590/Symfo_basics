@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f7cb57d821757925057584589b932a3",
+    "content-hash": "d5557e89efd14b104ac00c89e46c57c2",
     "packages": [
         {
             "name": "cocur/slugify",
