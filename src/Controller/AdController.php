@@ -42,6 +42,9 @@ class AdController extends AbstractController
             //$manager = $this->getDoctrine()->getManager(); remplacée par l'injection entitymanager
             $entityManager->persist($ad);
             $entityManager->flush();
+            
+            $this->addFlash('success', "L'annonce <strong>{$ad->getTitle()}</strong> a bien été enregistrée !");
+
 
             return $this->redirectToRoute('ads_show', [
                 'slug' => $ad->getSlug()
